@@ -35,6 +35,8 @@ int main(int argc, char* argv[], char* envp[])
 {
     //Set correct russian characters output
     setlocale(LC_ALL, "");
+    setlocale(LC_NUMERIC, "C");
+
     CCmdArgs args(argc, argv);
 
     if (args.isArgExist("--help") || args.isArgExist("-h")) {
