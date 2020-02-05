@@ -1,5 +1,7 @@
 # Migrate units properties from Wialon Pro to Wialon Local
-This application is a converter, wich will help migrate units created in Wialon Pro to Wialon Local. Tested on Wialon Pro 1401 and Wialon Local 1904. For creating wlp file is using [SDK API documentation](https://sdk.wialon.com/wiki/en/local/remoteapi1904/apiref/apiref).
+This console application is a converter, wich will help migrate units created in Wialon Pro to Wialon Local.
+
+Tested on Wialon Pro 1401 and Wialon Local 1904. For creating wlp file is using [SDK API documentation](https://sdk.wialon.com/wiki/en/local/remoteapi1904/apiref/apiref).
 
 ## Features
 Currently supports next unit properties for migrate:
@@ -80,10 +82,13 @@ Options:
 * `--opath=<path>` Absolute path to output file(s) (with extension .wlp) directory
 * `--overwrite` Overwrite files in output directory
 
-## Clone
-This application is written in C++17 using [Visual Studio 2019](https://visualstudio.microsoft.com/en/vs/). Clone this repo to your local machine using
-
+## Getting started
+* Install [Visual Studio](https://visualstudio.microsoft.com/en/vs/)
+* Get the code:
+    ```
     git clone --recursive https://github.com/sledopyt8/wialon-units-migrate.git
+    ```
+* Open *wialon_units_migrate.sln* in Visual Studio to build and run the app
 
 ## Third party
 For XML parse is using [pugixml library](https://pugixml.org) witch is licensed under the [MIT](https://opensource.org/licenses/MIT) License. Copyright (C) 2006-2019 Arseny Kapoulkine.

@@ -5,6 +5,7 @@
 #include <filesystem>
 #include <string>
 #include <iostream>
+#include <clocale>
 #include "CWLUnit.h"
 #include "CCmdArgs.h"
 #include "pugixml.hpp"
@@ -32,6 +33,8 @@ static void printHelp();
 //int main()
 int main(int argc, char* argv[], char* envp[])
 {
+    //Set correct russian characters output
+    setlocale(LC_ALL, "");
     CCmdArgs args(argc, argv);
 
     if (args.isArgExist("--help") || args.isArgExist("-h")) {
