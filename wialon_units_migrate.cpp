@@ -1,6 +1,11 @@
 // Copyright (c) 2020 Dmitriy Bassamykin.
 // Licensed under the MIT license <http://opensource.org/licenses/MIT>.
 
+/**
+    @file
+    @brief Основной файл программы
+*/
+
 #include <iostream>
 #include <filesystem>
 #include <string>
@@ -12,7 +17,6 @@
 
 using namespace pugi;
 namespace fs = std::filesystem;
-
 
 static bool isDirExist(const std::string& dirPath);
 static bool isFileExist(const std::string& fileName);
@@ -30,7 +34,13 @@ static bool convertSingleFile(const std::string& inFileName, const std::string& 
 
 static void printHelp();
 
-//int main()
+/**
+    @brief Основная функция программы
+    @param[in] argc Число аргументов командной строки
+	@param[in] argv An argument vector of the command line arguments
+	@param [in] envp Переменные окружения
+	@return Код возврата. 0 в случае успеха
+*/
 int main(int argc, char* argv[], char* envp[])
 {
     //Set correct russian characters output
@@ -105,6 +115,11 @@ int main(int argc, char* argv[], char* envp[])
     }
 }
 
+/**
+    @brief Проверяем, существует ли указанная директория
+    @param[in] dirPath Ссылка на строку пути к директории
+	@return true если директрония существует
+*/
 static bool isDirExist(const std::string& dirPath)
 {
     fs::path pathToCheck(dirPath);
@@ -116,6 +131,11 @@ static bool isDirExist(const std::string& dirPath)
     return false;
 }
 
+/**
+    @brief Проверяем, существует ли указанный файл
+    @param[in] fileName Ссылка на строку пути к файлу
+	@return true если файл существует
+*/
 static bool isFileExist(const std::string& fileName)
 {
     fs::path pathToCheck(fileName);
@@ -128,6 +148,12 @@ static bool isFileExist(const std::string& fileName)
     return false;
 }
 
+/**
+    @brief Конвертация файла xml (Wialon Pro) в файл wlp (Wialon Local)
+    @param[in] xmlFilename Путь к файлу xml
+	@param[in] wlpFilename Путь к файлу wlp
+	@return true в случае успеха
+*/
 static bool processXmlFile(const std::string& xmlFilename, const std::string& wlpFilename)
 {
     if (xmlFilename.empty() || wlpFilename.empty()) {
@@ -185,6 +211,11 @@ static bool processXmlFile(const std::string& xmlFilename, const std::string& wl
     return true;
 }
 
+/**
+    @brief Добавить основные свойства объекта
+    @param[in] node Раздел xml документа с основными свойствами
+	@param[in] wlp
+*/
 static void addGeneral(const xml_node& node, CWLUnit& wlp)
 {
     wlpGeneral general;
@@ -195,6 +226,11 @@ static void addGeneral(const xml_node& node, CWLUnit& wlp)
     wlp.addGeneral(general);
 }
 
+/**
+    @brief Добавить проивользое поле
+    @param[in] node Раздел xml документа с произвольными полями
+	@param[in] wlp
+*/
 static void addCustomFields(const xml_node& node, CWLUnit& wlp)
 {
     for (auto customField = node.child("field"); customField; customField = customField.next_sibling("field")) {
@@ -202,6 +238,11 @@ static void addCustomFields(const xml_node& node, CWLUnit& wlp)
     }
 }
 
+/**
+    @brief Добавить счетчики
+    @param[in] node Раздел xml документа со значениями счетчиков
+	@param[in] wlp
+*/
 static void addCounters(const xml_node& node, CWLUnit& wlp)
 {
     for (auto counter = node.first_child(); counter; counter = counter.next_sibling()) {
@@ -231,6 +272,12 @@ static void addCounters(const xml_node& node, CWLUnit& wlp)
     }
 }
 
+/**
+    @brief Добавить датчик
+    @param[in] node Раздел xml документа с основными свойствами
+	@param[in] wlp
+	@param[in] fuelConfigMathNode Раздел xml документа с данными по расходу топлива
+*/
 static void addSensor(const xml_node& node, CWLUnit& wlp, const xml_node& fuelConfigMathNode)
 {
     wlpSensor wlp_sensor;
@@ -268,6 +315,11 @@ static void addSensor(const xml_node& node, CWLUnit& wlp, const xml_node& fuelCo
     wlp.addSensor(wlp_sensor);
 }
 
+/**
+    @brief Добавить детектор поездок
+    @param[in] node Раздел xml документа с детектором поездок
+	@param[in] wlp
+*/
 static void addTripDetector(const xml_node& node, CWLUnit& wlp)
 {
     wlpTripDetector tripd = { 0 };
@@ -283,6 +335,11 @@ static void addTripDetector(const xml_node& node, CWLUnit& wlp)
     wlp.addTripDetector(tripd);
 }
 
+/**
+    @brief Добавить информацию по расходу топлива
+    @param[in] node Раздел xml документа с данными по расходу топлива
+	@param[in] wlp
+*/
 static void addFuelConsumpt(const xml_node& node, CWLUnit& wlp)
 {
     wlpFuelConsumption fuelCons = { 0 };
@@ -402,6 +459,14 @@ static void addFuelConsumpt(const xml_node& node, CWLUnit& wlp)
     wlp.addFuelSettings(fuelCons);
 }
 
+
+/**
+    @brief Множественное преобразование файлов в директории
+    @param[in] inDirPath Путь к входной директории
+	@param[in] outDirPath Путь к выходной директории
+	@param[in] overwrite true - перезаписывать существующие файлы
+	@return Число успешно сконвертированных файлов
+*/
 static size_t convertPath(const std::string& inDirPath, const std::string& outDirPath, const bool overwrite)
 {
     fs::path inPath(inDirPath);
@@ -423,6 +488,13 @@ static size_t convertPath(const std::string& inDirPath, const std::string& outDi
     return fileCnt;
 }
 
+/**
+    @brief Конвертация одного файла
+    @param[in] inFileName Путь к входному файлу
+	@param[in] outDirPath Путь к выходной директории
+	@param[in] overwrite true - перезаписывать существующие файлы
+	@return true в случае успеха
+*/
 static bool convertSingleFile(const std::string& inFileName, const std::string& outDirPath, const bool overwrite)
 {
     fs::path inPath(inFileName);
@@ -453,6 +525,9 @@ static bool convertSingleFile(const std::string& inFileName, const std::string& 
     }
 }
 
+/**
+    @brief Вывести в консоль справочную информацию
+*/
 static void printHelp()
 {
     std::cout << "Migrate units created in Wialon Pro to Wialon Local" << std::endl;

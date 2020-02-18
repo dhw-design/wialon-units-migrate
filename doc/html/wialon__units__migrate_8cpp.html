@@ -1,0 +1,704 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Wialon units migrate: Файл wialon_units_migrate.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Wialon units migrate
+   </div>
+   <div id="projectbrief">Конвертация файлов, созданных в Wialon Pro, в файлы для Wialon Local</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('wialon__units__migrate_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл wialon_units_migrate.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Основной файл программы  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;clocale&gt;</code><br />
+<code>#include &quot;CWLUnit.h&quot;</code><br />
+<code>#include &quot;CCmdArgs.h&quot;</code><br />
+<code>#include &quot;pugixml.hpp&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:acba0384f81cfd6bfc2f5126fcf54e1ca"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#acba0384f81cfd6bfc2f5126fcf54e1ca">isDirExist</a> (const std::string &amp;dirPath)</td></tr>
+<tr class="memdesc:acba0384f81cfd6bfc2f5126fcf54e1ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяем, существует ли указанная директория  <a href="wialon__units__migrate_8cpp.html#acba0384f81cfd6bfc2f5126fcf54e1ca">Подробнее...</a><br /></td></tr>
+<tr class="separator:acba0384f81cfd6bfc2f5126fcf54e1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e8c1b428b0272960fc795e29506d5e5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#a5e8c1b428b0272960fc795e29506d5e5">isFileExist</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a5e8c1b428b0272960fc795e29506d5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяем, существует ли указанный файл  <a href="wialon__units__migrate_8cpp.html#a5e8c1b428b0272960fc795e29506d5e5">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5e8c1b428b0272960fc795e29506d5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce15272aef55d5767c7a60f3ed5276f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#a4ce15272aef55d5767c7a60f3ed5276f">processXmlFile</a> (const std::string &amp;xmlFilename, const std::string &amp;wlpFilename)</td></tr>
+<tr class="memdesc:a4ce15272aef55d5767c7a60f3ed5276f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конвертация файла xml (Wialon Pro) в файл wlp (Wialon Local)  <a href="wialon__units__migrate_8cpp.html#a4ce15272aef55d5767c7a60f3ed5276f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4ce15272aef55d5767c7a60f3ed5276f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51864d7bf2c20903cab4246caf1d2272"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#a51864d7bf2c20903cab4246caf1d2272">addGeneral</a> (const xml_node &amp;node, <a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;wlp)</td></tr>
+<tr class="memdesc:a51864d7bf2c20903cab4246caf1d2272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить основные свойства объекта  <a href="wialon__units__migrate_8cpp.html#a51864d7bf2c20903cab4246caf1d2272">Подробнее...</a><br /></td></tr>
+<tr class="separator:a51864d7bf2c20903cab4246caf1d2272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf79a5352c8a7addec64113f724570d0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#acf79a5352c8a7addec64113f724570d0">addCustomFields</a> (const xml_node &amp;node, <a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;wlp)</td></tr>
+<tr class="memdesc:acf79a5352c8a7addec64113f724570d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить проивользое поле  <a href="wialon__units__migrate_8cpp.html#acf79a5352c8a7addec64113f724570d0">Подробнее...</a><br /></td></tr>
+<tr class="separator:acf79a5352c8a7addec64113f724570d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51c90791c619b53309bbe15aba233edc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#a51c90791c619b53309bbe15aba233edc">addCounters</a> (const xml_node &amp;node, <a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;wlp)</td></tr>
+<tr class="memdesc:a51c90791c619b53309bbe15aba233edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить счетчики  <a href="wialon__units__migrate_8cpp.html#a51c90791c619b53309bbe15aba233edc">Подробнее...</a><br /></td></tr>
+<tr class="separator:a51c90791c619b53309bbe15aba233edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ca57a801ed0d23a6047b81ba4a24cab"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#a0ca57a801ed0d23a6047b81ba4a24cab">addSensor</a> (const xml_node &amp;node, <a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;wlp, const xml_node &amp;fuelConfigMathNode)</td></tr>
+<tr class="memdesc:a0ca57a801ed0d23a6047b81ba4a24cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить датчик  <a href="wialon__units__migrate_8cpp.html#a0ca57a801ed0d23a6047b81ba4a24cab">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0ca57a801ed0d23a6047b81ba4a24cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7822e1b55078cea97a1d1b8e984f1cf4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#a7822e1b55078cea97a1d1b8e984f1cf4">addTripDetector</a> (const xml_node &amp;node, <a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;wlp)</td></tr>
+<tr class="memdesc:a7822e1b55078cea97a1d1b8e984f1cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить детектор поездок  <a href="wialon__units__migrate_8cpp.html#a7822e1b55078cea97a1d1b8e984f1cf4">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7822e1b55078cea97a1d1b8e984f1cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2947026d9259d462316df11d2f5ec86c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#a2947026d9259d462316df11d2f5ec86c">addFuelConsumpt</a> (const xml_node &amp;node, <a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;wlp)</td></tr>
+<tr class="memdesc:a2947026d9259d462316df11d2f5ec86c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавить информацию по расходу топлива  <a href="wialon__units__migrate_8cpp.html#a2947026d9259d462316df11d2f5ec86c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2947026d9259d462316df11d2f5ec86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a425ef5bb7a96ca437d1372bfb135493a"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#a425ef5bb7a96ca437d1372bfb135493a">convertPath</a> (const std::string &amp;inDirPath, const std::string &amp;outDirPath, const bool overwrite)</td></tr>
+<tr class="memdesc:a425ef5bb7a96ca437d1372bfb135493a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Множественное преобразование файлов в директории  <a href="wialon__units__migrate_8cpp.html#a425ef5bb7a96ca437d1372bfb135493a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a425ef5bb7a96ca437d1372bfb135493a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea1a9d563ea5da4116bd30e2e357f3f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#a7ea1a9d563ea5da4116bd30e2e357f3f">convertSingleFile</a> (const std::string &amp;inFileName, const std::string &amp;outDirPath, const bool overwrite)</td></tr>
+<tr class="memdesc:a7ea1a9d563ea5da4116bd30e2e357f3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конвертация одного файла  <a href="wialon__units__migrate_8cpp.html#a7ea1a9d563ea5da4116bd30e2e357f3f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7ea1a9d563ea5da4116bd30e2e357f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7094bcc6f07135ae1452872cd5e13a"><td class="memItemLeft" align="right" valign="top"><a id="a9a7094bcc6f07135ae1452872cd5e13a"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#a9a7094bcc6f07135ae1452872cd5e13a">printHelp</a> ()</td></tr>
+<tr class="memdesc:a9a7094bcc6f07135ae1452872cd5e13a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывести в консоль справочную информацию <br /></td></tr>
+<tr class="separator:a9a7094bcc6f07135ae1452872cd5e13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adedb285b02c41bde2158ded9cc9fd7ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wialon__units__migrate_8cpp.html#adedb285b02c41bde2158ded9cc9fd7ac">main</a> (int argc, char *argv[], char *envp[])</td></tr>
+<tr class="memdesc:adedb285b02c41bde2158ded9cc9fd7ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Основная функция программы  <a href="wialon__units__migrate_8cpp.html#adedb285b02c41bde2158ded9cc9fd7ac">Подробнее...</a><br /></td></tr>
+<tr class="separator:adedb285b02c41bde2158ded9cc9fd7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Основной файл программы </p>
+</div><h2 class="groupheader">Функции</h2>
+<a id="a51c90791c619b53309bbe15aba233edc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51c90791c619b53309bbe15aba233edc">&#9670;&nbsp;</a></span>addCounters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void addCounters </td>
+          <td>(</td>
+          <td class="paramtype">const xml_node &amp;&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;&#160;</td>
+          <td class="paramname"><em>wlp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить счетчики </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>Раздел xml документа со значениями счетчиков </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wlp</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acf79a5352c8a7addec64113f724570d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf79a5352c8a7addec64113f724570d0">&#9670;&nbsp;</a></span>addCustomFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void addCustomFields </td>
+          <td>(</td>
+          <td class="paramtype">const xml_node &amp;&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;&#160;</td>
+          <td class="paramname"><em>wlp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить проивользое поле </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>Раздел xml документа с произвольными полями </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wlp</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2947026d9259d462316df11d2f5ec86c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2947026d9259d462316df11d2f5ec86c">&#9670;&nbsp;</a></span>addFuelConsumpt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void addFuelConsumpt </td>
+          <td>(</td>
+          <td class="paramtype">const xml_node &amp;&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;&#160;</td>
+          <td class="paramname"><em>wlp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить информацию по расходу топлива </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>Раздел xml документа с данными по расходу топлива </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wlp</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a51864d7bf2c20903cab4246caf1d2272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51864d7bf2c20903cab4246caf1d2272">&#9670;&nbsp;</a></span>addGeneral()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void addGeneral </td>
+          <td>(</td>
+          <td class="paramtype">const xml_node &amp;&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;&#160;</td>
+          <td class="paramname"><em>wlp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить основные свойства объекта </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>Раздел xml документа с основными свойствами </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wlp</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0ca57a801ed0d23a6047b81ba4a24cab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ca57a801ed0d23a6047b81ba4a24cab">&#9670;&nbsp;</a></span>addSensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void addSensor </td>
+          <td>(</td>
+          <td class="paramtype">const xml_node &amp;&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;&#160;</td>
+          <td class="paramname"><em>wlp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const xml_node &amp;&#160;</td>
+          <td class="paramname"><em>fuelConfigMathNode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить датчик </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>Раздел xml документа с основными свойствами </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wlp</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fuelConfigMathNode</td><td>Раздел xml документа с данными по расходу топлива </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7822e1b55078cea97a1d1b8e984f1cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7822e1b55078cea97a1d1b8e984f1cf4">&#9670;&nbsp;</a></span>addTripDetector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void addTripDetector </td>
+          <td>(</td>
+          <td class="paramtype">const xml_node &amp;&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c_w_l_unit.html">CWLUnit</a> &amp;&#160;</td>
+          <td class="paramname"><em>wlp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Добавить детектор поездок </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>Раздел xml документа с детектором поездок </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wlp</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a425ef5bb7a96ca437d1372bfb135493a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a425ef5bb7a96ca437d1372bfb135493a">&#9670;&nbsp;</a></span>convertPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t convertPath </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>inDirPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>outDirPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>overwrite</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Множественное преобразование файлов в директории </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inDirPath</td><td>Путь к входной директории </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outDirPath</td><td>Путь к выходной директории </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">overwrite</td><td>true - перезаписывать существующие файлы </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Число успешно сконвертированных файлов </dd></dl>
+
+</div>
+</div>
+<a id="a7ea1a9d563ea5da4116bd30e2e357f3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea1a9d563ea5da4116bd30e2e357f3f">&#9670;&nbsp;</a></span>convertSingleFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool convertSingleFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>inFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>outDirPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>overwrite</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конвертация одного файла </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inFileName</td><td>Путь к входному файлу </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outDirPath</td><td>Путь к выходной директории </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">overwrite</td><td>true - перезаписывать существующие файлы </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true в случае успеха </dd></dl>
+
+</div>
+</div>
+<a id="acba0384f81cfd6bfc2f5126fcf54e1ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba0384f81cfd6bfc2f5126fcf54e1ca">&#9670;&nbsp;</a></span>isDirExist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool isDirExist </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dirPath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяем, существует ли указанная директория </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dirPath</td><td>Ссылка на строку пути к директории </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если директрония существует </dd></dl>
+
+</div>
+</div>
+<a id="a5e8c1b428b0272960fc795e29506d5e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e8c1b428b0272960fc795e29506d5e5">&#9670;&nbsp;</a></span>isFileExist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool isFileExist </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяем, существует ли указанный файл </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fileName</td><td>Ссылка на строку пути к файлу </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true если файл существует </dd></dl>
+
+</div>
+</div>
+<a id="adedb285b02c41bde2158ded9cc9fd7ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adedb285b02c41bde2158ded9cc9fd7ac">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>envp</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Основная функция программы </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">argc</td><td>Число аргументов командной строки </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">argv</td><td>An argument vector of the command line arguments </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">envp</td><td>Переменные окружения </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Код возврата. 0 в случае успеха </dd></dl>
+
+</div>
+</div>
+<a id="a4ce15272aef55d5767c7a60f3ed5276f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ce15272aef55d5767c7a60f3ed5276f">&#9670;&nbsp;</a></span>processXmlFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool processXmlFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>xmlFilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>wlpFilename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конвертация файла xml (Wialon Pro) в файл wlp (Wialon Local) </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">xmlFilename</td><td>Путь к файлу xml </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">wlpFilename</td><td>Путь к файлу wlp </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true в случае успеха </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="wialon__units__migrate_8cpp.html">wialon_units_migrate.cpp</a></li>
+    <li class="footer">Создано системой
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
