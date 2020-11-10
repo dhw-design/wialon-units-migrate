@@ -86,7 +86,7 @@ Options:
 * Install [Visual Studio](https://visualstudio.microsoft.com/en/vs/)
 * Get the code:
     ```
-    git clone --recursive https://github.com/sledopyt8/wialon-units-migrate.git
+    git clone --recursive https://github.com/dhw-design/wialon-units-migrate.git
     ```
 * Open *wialon_units_migrate.sln* in Visual Studio to build and run the app
 
